@@ -9,7 +9,7 @@ from types import ModuleType
 from typing import Any, Dict, Iterator, Optional, Tuple, Type, Union
 
 from .env import Environment
-from .exceptions import UnknownFileType, UnpicklableConfigMember
+from .exceptions import ConfigFileNotFound, UnknownFileType, UnpicklableConfigMember
 from .runners import Local
 from .terminals import WINDOWS
 from .util import debug, yaml
