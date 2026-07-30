@@ -899,6 +899,10 @@ class Config(DataProxy):
             # Typically means 'no such file', so just note & skip past.
             except IOError as e:
                 if e.errno == 2:
+                    # Absolute paths (runtime config) were explicitly given by
+                    # the user; a missing file is an error, not "not configured".
+                    if absolute:
+                        raise ConfigFileNotFound(str(filepath)) from e
                     err = "Didn't see any {}, skipping."
                     debug(err.format(filepath))
                 else:
