@@ -10,7 +10,9 @@ from typing import Any, Dict, Iterator, Optional, Tuple, Type, Union
 
 from .env import Environment
 from .exceptions import (
-    ConfigFileNotFound, UnknownFileType, UnpicklableConfigMember
+    ConfigFileNotFound,
+    UnknownFileType,
+    UnpicklableConfigMember,
 )
 from .runners import Local
 from .terminals import WINDOWS
