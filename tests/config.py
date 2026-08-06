@@ -625,7 +625,9 @@ Valid real attributes: ['clear', 'clone', 'env_prefix', 'file_prefix', 'from_dat
             # Regression for #560: when the user provides an explicit runtime
             # config path that doesn't exist, invoke should raise immediately
             # instead of silently continuing with no config loaded.
-            c = Config(runtime_path=join(CONFIGS_PATH, "nonexistent_typo.yaml"))
+            c = Config(
+                runtime_path=join(CONFIGS_PATH, "nonexistent_typo.yaml")
+            )
             c.load_runtime()
 
         def missing_runtime_path_error_includes_path(self):
