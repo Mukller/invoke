@@ -302,8 +302,9 @@ class ConfigFileNotFound(IOError):
     def __init__(self, path: str) -> None:
         self.path = path
         super().__init__(
-            ("Runtime config file {!r} was not found."
-             " Check the path for typos.").format(path)
+            "Runtime config file {!r} was not found. Check the path for typos.".format(
+                path
+            )
         )
 
 
